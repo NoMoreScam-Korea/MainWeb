@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기부하기 | NoMoreScam Korea</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-slate-900 font-sans">
+
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2 group">
+                <i class="fas fa-arrow-left text-gray-400 group-hover:text-blue-600 transition"></i>
+                <span class="font-bold text-lg text-slate-800 tracking-tighter">NMS-K <span class="text-blue-600 font-black">SUPPORT</span></span>
+            </a>
+            <img src="/assets/img/logo.jpg" alt="Logo" class="w-8 h-8 rounded-full border border-gray-100">
+        </div>
+    </nav>
+
+    <header class="max-w-4xl mx-auto px-6 py-24 text-center">
+        <div class="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-[10px] font-bold mb-6 tracking-widest uppercase">Support Our Mission</div>
+        <h1 class="text-4xl md:text-5xl font-black mb-6 leading-tight tracking-tight">
+            "우리가 그들과 계속 맞서 싸울 수 있도록<br><span class="text-blue-600">도와주세요.</span>"
+        </h1>
+        <p class="text-lg text-slate-500 leading-relaxed max-w-2xl mx-auto">
+            NMS-K의 모든 사기 예방 활동은 자발적인 기부로 운영됩니다.<br>
+            보내주시는 소중한 후원금은 시스템 유지 및 분석 인프라 구축에 전액 사용됩니다.
+        </p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 pb-32">
+        <div class="grid md:grid-cols-2 gap-10">
+            
+            <div class="bg-white p-10 rounded-[3rem] shadow-sm border border-gray-100 flex flex-col items-center text-center group hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                <div class="w-24 h-24 mb-8 flex items-center justify-center">
+                    <img src="/assets/img/tether-usdt-logo.png" alt="USDT Logo" class="w-full h-full object-contain">
+                </div>
+                <h3 class="text-2xl font-black mb-2 uppercase tracking-tight">USDT <span class="text-slate-400 text-sm font-medium">(TRC-20)</span></h3>
+                <p class="text-sm text-slate-400 mb-8">Tether on TRON Network</p>
+                
+                <div class="relative mb-8 group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute -inset-2 bg-emerald-500/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative bg-white p-3 rounded-2xl shadow-inner border border-gray-100">
+                        <img src="/assets/img/USDT_TRC20_QR.jpg" alt="USDT TRC20 QR Code" class="w-40 h-40 rounded-lg">
+                    </div>
+                </div>
+
+                <div class="w-full relative">
+                    <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 text-left px-2">Deposit Address</label>
+                    <input type="text" readonly value="TQHgD3YKrPGSJPfjEp2B8Ypk7FWKSDonY5" 
+                           id="usdtAddr"
+                           class="w-full bg-slate-50 p-4 pr-12 rounded-2xl text-[11px] font-mono text-slate-600 border border-gray-100 outline-none focus:ring-2 focus:ring-emerald-500 transition-all">
+                    <button onclick="copyToClipboard('usdtAddr')" class="absolute right-4 top-9 text-slate-300 hover:text-emerald-500 transition-colors">
+                        <i class="far fa-copy text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-white p-10 rounded-[3rem] shadow-sm border border-gray-100 flex flex-col items-center text-center group hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                <div class="w-24 h-24 mb-8 flex items-center justify-center p-2">
+                    <img src="/assets/img/litecoin-ltc-logo.png" alt="Litecoin Logo" class="w-full h-full object-contain">
+                </div>
+                <h3 class="text-2xl font-black mb-2 uppercase tracking-tight">Litecoin <span class="text-slate-400 text-sm font-medium">(LTC)</span></h3>
+                <p class="text-sm text-slate-400 mb-8">Litecoin Mainnet</p>
+
+                <div class="relative mb-8 group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute -inset-2 bg-emerald-500/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative bg-white p-3 rounded-2xl shadow-inner border border-gray-100">
+                        <img src="/assets/img/LTC_MAIN_QR.jpg" alt="LTC Mainnet QR Code" class="w-40 h-40 rounded-lg">
+                    </div>
+                </div>
+
+                <div class="w-full relative">
+                    <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 text-left px-2">Deposit Address</label>
+                    <input type="text" readonly value="ltc1qq5r536js5cy2v37j70m0tktnjrvhkpdd8rlg04" 
+                           id="ltcAddr"
+                           class="w-full bg-slate-50 p-4 pr-12 rounded-2xl text-[11px] font-mono text-slate-600 border border-gray-100 outline-none focus:ring-2 focus:ring-blue-500 transition-all">
+                    <button onclick="copyToClipboard('ltcAddr')" class="absolute right-4 top-9 text-slate-300 hover:text-blue-500 transition-colors">
+                        <i class="far fa-copy text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-16 flex flex-col md:flex-row gap-6 items-center bg-slate-900 rounded-[2rem] p-8 md:p-12 text-white overflow-hidden relative">
+            <div class="absolute right-0 top-0 opacity-10 w-64 h-64 -mr-20 -mt-20">
+                <img src="/assets/img/logo.jpg" alt="Watermark" class="w-full h-full rounded-full">
+            </div>
+            <div class="relative z-10 flex-1">
+                <h4 class="text-xl font-bold mb-3 flex items-center gap-2">
+                    <i class="fas fa-info-circle text-blue-400"></i>
+                    기부 시 유의사항
+                </h4>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                    반드시 해당되는 네트워크(TRC-20 등)를 확인 후 송금해 주시기 바랍니다. 오입금된 자산은 기술적으로 복구가 불가능할 수 있습니다. <br>NMS-K는 익명 기부를 원칙으로 하며, 기부하신 내역은 관련 법령에 따른 세액공제 대상이 아닐 수 있음을 알려드립니다.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 text-center text-gray-300 text-[10px] uppercase tracking-[0.2em] font-bold">
+        © NoMoreScam Korea (NMS-K) · Community Supported
+    </footer>
+
+    <script>
+        function copyToClipboard(elementId) {
+            const copyText = document.getElementById(elementId);
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            
+            // 주소 복사 알림 디자인 (간단하게 브라우저 알림 사용)
+            alert("주소가 복사되었습니다.");
+        }
+    </script>
+</body>
+</html>

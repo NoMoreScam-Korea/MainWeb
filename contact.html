@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문의하기 | NoMoreScam Korea</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body class="bg-gray-50 text-slate-900 font-sans">
+
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2 group">
+                <i class="fas fa-arrow-left text-gray-400 group-hover:text-blue-600 transition"></i>
+                <span class="font-bold text-lg text-slate-800 tracking-tighter">NMS-K <span class="text-blue-600 font-black">CONTACT</span></span>
+            </a>
+            <img src="/assets/img/logo.jpg" alt="Logo" class="w-8 h-8 rounded-full border border-gray-100">
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-6 py-20">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-black mb-4 tracking-tight">무엇을 도와드릴까요?</h1>
+            <p class="text-slate-500 leading-relaxed">
+                NMS-K의 활동, 파트너십 제안 또는 기타 궁금한 점이 있으시다면<br class="hidden md:block">
+                아래 양식을 통해 자유롭게 문의해 주세요.
+            </p>
+        </div>
+
+
+        <div class="bg-white rounded-[2.5rem] shadow-sm border border-gray-200 p-8 md:p-12">
+            <div class="flex p-4 mb-4 text-sm text-amber-800 rounded-2xl bg-amber-50 border border-amber-100" role="alert">
+                <i class="fas fa-exclamation-triangle mt-0.5 mr-3 flex-shrink-0"></i>
+                <div>
+                    <span class="font-bold tracking-tight">알림:</span> 현재 NMS-K는 정식 출범 전이며, 기능이 비활성화되어있습니다.
+                </div>
+            </div>
+            <form action="/404.html" method="POST" id="contactForm" class="space-y-8">
+                
+                <div>
+                    <label for="name" class="block text-sm font-bold text-slate-700 mb-3 ml-1">이름 / 단체명</label>
+                    <input type="text" id="name" name="name" required placeholder="성함 또는 조직명을 입력하세요" 
+                           class="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder:text-slate-300">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-bold text-slate-700 mb-3 ml-1">이메일 주소</label>
+                    <input type="email" id="email" name="email" required placeholder="답변을 받으실 이메일을 입력하세요" 
+                           class="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder:text-slate-300">
+                </div>
+
+                <div>
+                    <label for="message" class="block text-sm font-bold text-slate-700 mb-3 ml-1">문의 사항</label>
+                    <textarea id="message" name="message" rows="6" required placeholder="문의하실 내용을 상세히 적어주세요" 
+                              class="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder:text-slate-300 resize-none"></textarea>
+                </div>
+
+                <div class="flex justify-center py-4">
+                    <div class="g-recaptcha" data-sitekey="6Leeyk8sAAAAANTY4ickv94CT60Z_KD1Ow4R43gF"></div>
+                </div>
+
+                <button type="submit" class="w-full bg-slate-900 text-white py-5 rounded-2xl font-black text-lg hover:bg-blue-600 transition-all shadow-xl shadow-slate-200 flex items-center justify-center gap-3">
+                    <i class="fas fa-paper-plane text-sm"></i>
+                    메시지 보내기
+                </button>
+            </form>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-2 gap-6">
+            <div class="bg-blue-50/50 p-6 rounded-3xl border border-blue-100/50 flex items-center gap-4">
+                <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-blue-600 shadow-sm">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-slate-800">답변 소요 시간</h4>
+                    <p class="text-xs text-slate-500">영업일 기준 24~48시간 이내</p>
+                </div>
+            </div>
+            <div class="bg-indigo-50/50 p-6 rounded-3xl border border-indigo-100/50 flex items-center gap-4">
+                <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-indigo-600 shadow-sm">
+                    <i class="fas fa-shield"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-slate-800">보안 정책</h4>
+                    <p class="text-xs text-slate-500">보내신 정보는 안전하게 암호화됩니다</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 text-center text-gray-300 text-[10px] font-bold tracking-[0.2em]">
+        © NoMoreScam Korea (NMS-K) · Response Team
+    </footer>
+
+    <script>
+        // 양식 제출 시 reCAPTCHA 체크 로직 (예시)
+        document.getElementById('contactForm').onsubmit = function(e) {
+            var response = grecaptcha.getResponse();
+            if(response.length == 0) {
+                alert('로봇이 아님을 확인해 주세요.');
+                e.preventDefault();
+                return false;
+            }
+        };
+    </script>
+</body>
+</html>

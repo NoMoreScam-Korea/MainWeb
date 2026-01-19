@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위협 탐색 | NoMoreScam Korea</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-slate-900 font-sans">
+
+    <nav class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2 group">
+                <i class="fas fa-arrow-left text-gray-400 group-hover:text-blue-600 transition"></i>
+                <span class="font-bold text-lg text-slate-800 tracking-tighter">NMS-K <span class="text-blue-600 font-black">EXPLORER</span></span>
+            </a>
+            <div class="flex items-center gap-4">
+                <img src="/assets/img/logo.jpg" alt="Logo" class="w-8 h-8 rounded-full border">
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-white border-b border-gray-100 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <h1 class="text-4xl font-black mb-4">위협 탐색 데이터베이스</h1>
+            <p class="text-slate-500 mb-10 max-w-2xl">NMS-K 인텔리전스 엔진이 실시간으로 식별한 악성 사이트 목록입니다. 유포 중인 도메인과 수법을 확인하여 피해를 예방하십시오.</p>
+            
+            <div class="flex flex-col md:flex-row gap-4 items-center bg-gray-50 p-4 rounded-3xl border border-gray-100">
+                <div class="relative flex-1 w-full">
+                    <i class="fas fa-search absolute left-4 top-4 text-slate-300"></i>
+                    <input type="text" placeholder="도메인 또는 사이트명 검색..." class="w-full pl-12 pr-4 py-3 bg-white border border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none transition">
+                </div>
+                <div class="flex gap-2 w-full md:w-auto">
+                    <select class="flex-1 md:w-40 p-3 bg-white border border-gray-200 rounded-2xl text-sm font-medium outline-none cursor-pointer">
+                        <option>전체 유형</option>
+                        <option>투자사기</option>
+                        <option>가짜 쇼핑몰</option>
+                        <option>공공기관 피싱</option>
+                    </select>
+                    <button class="px-6 py-3 bg-slate-900 text-white rounded-2xl font-bold text-sm hover:bg-blue-600 transition">필터 적용</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-16">
+        
+        <div class="flex p-5 mb-12 text-sm text-amber-800 rounded-[2rem] bg-amber-50 border border-amber-100 items-center" role="alert">
+            <i class="fas fa-exclamation-triangle mr-4 text-xl flex-shrink-0"></i>
+            <div>
+                <span class="font-bold">시스템 안내:</span> 현재 정식 출범 전 준비 단계로, 아래 리스트는 실제 인텔리전스 데이터가 아닌 테스트용 샘플 데이터가 노출되고 있습니다.
+            </div>
+        </div>
+
+        <div id="threat-gallery" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+            </div>
+
+        <div class="mt-20 flex justify-center gap-2">
+            <button class="w-10 h-10 flex items-center justify-center rounded-xl bg-white border border-gray-200 text-slate-400 hover:border-blue-600 hover:text-blue-600 transition">1</button>
+            <button class="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 text-slate-300 cursor-not-allowed">2</button>
+            <button class="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 text-slate-300 cursor-not-allowed">3</button>
+        </div>
+    </main>
+
+    <footer class="py-12 text-center text-gray-400 text-[10px] font-bold tracking-widest border-t border-gray-100">
+        © NoMoreScam Korea (NMS-K) · Intelligence Center
+    </footer>
+
+    <script>
+        const sampleData = [
+            { name: "Global Trade Pro", type: "투자사기", status: "활동중", desc: "고수익 해외 주식 투자를 빙자한 가짜 거래 플랫폼입니다.", img: "/assets/img/h_main.png" },
+            { name: "K-쇼핑 특가몰", type: "가짜 쇼핑몰", status: "활동중", desc: "유명 브랜드를 사칭하여 결제 대금을 편취하는 사이트입니다.", img: "/assets/img/h_main.png" },
+            { name: "민원24 공식지원", type: "공공기관 피싱", status: "차단완료", desc: "정부 기관을 사칭해 개인정보 및 금융 정보를 요구합니다.", img: "/assets/img/h_main.png" },
+            { name: "Safe Coin Exchange", type: "가짜 거래소", status: "활동중", desc: "상장되지 않은 코인 매수를 유도하는 불법 거래소입니다.", img: "/assets/img/h_main.png" },
+            { name: "우체국 택배 확인", type: "공공기관 피싱", status: "활동중", desc: "택배 미수령 확인을 미끼로 악성 앱 설치를 유도합니다.", img: "/assets/img/h_main.png" },
+            { name: "비트코인 AI 자동봇", type: "투자사기", status: "차단완료", desc: "AI 자동 매매를 통한 수익 보장을 약속하는 사기 플랫폼입니다.", img: "/assets/img/h_main.png" },
+            { name: "명품 데일리 할인", type: "가짜 쇼핑몰", status: "활동중", desc: "인스타그램 광고를 통해 유입시키는 가짜 사치품 판매처입니다.", img: "/assets/img/h_main.png" },
+            { name: "검찰청 긴급 고지", type: "공공기관 피싱", status: "활동중", desc: "범죄 연루 고지 후 원격 제어 앱 설치를 요구하는 사이트입니다.", img: "/assets/img/h_main.png" },
+            { name: "로또 당첨 예측 VIP", type: "기타 사기", status: "활동중", desc: "당첨 번호 예측 서비스를 유료로 결제하게 만드는 사기입니다.", img: "/assets/img/h_main.png" },
+            { name: "스마트 소액 대출", type: "금융 사기", status: "활동중", desc: "저금리 대출을 미끼로 선입금 수수료를 요구하는 플랫폼입니다.", img: "/assets/img/h_main.png" }
+        ];
+
+        const container = document.getElementById('threat-gallery');
+        container.innerHTML = sampleData.map(item => `
+            <div class="group bg-white border border-gray-200 rounded-[2.5rem] overflow-hidden hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 transition-all duration-500">
+                <div class="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                    <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100">
+                    <div class="absolute top-4 right-4">
+                        <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-tighter ${item.status === '활동중' ? 'bg-red-500 text-white animate-pulse' : 'bg-slate-400 text-white'}">
+                            ${item.status}
+                        </span>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <span class="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-2 block">${item.type}</span>
+                    <h3 class="font-black text-slate-800 mb-2 truncate text-lg">${item.name}</h3>
+                    <p class="text-[11px] text-slate-500 leading-relaxed line-clamp-2 mb-6 h-8">
+                        ${item.desc}
+                    </p>
+                    <button class="w-full py-3.5 bg-gray-50 text-slate-400 text-xs font-black rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        상세 리포트 보기
+                    </button>
+                </div>
+            </div>
+        `).join('');
+    </script>
+</body>
+</html>
