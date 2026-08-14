@@ -1,7 +1,38 @@
 (function($) {
+    const navbar = document.querySelector(".navbar");
+    const navToggle = document.querySelector(".nav-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
     $.addEventListener("scroll",()=>{
-        document.querySelector(".navbar").classList.toggle("scrolled", $.scrollY > 50);
+        if (navbar) {
+            navbar.classList.toggle("scrolled", $.scrollY > 50);
+        }
     });
+
+    if (navToggle && navMenu) {
+        const setMenuState = (isOpen) => {
+            navMenu.classList.toggle("open", isOpen);
+            navToggle.setAttribute("aria-expanded", String(isOpen));
+        };
+
+        navToggle.addEventListener("click", () => {
+            setMenuState(!navMenu.classList.contains("open"));
+        });
+
+        navMenu.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                if (window.innerWidth <= 1170) {
+                    setMenuState(false);
+                }
+            });
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 1170) {
+                setMenuState(false);
+            }
+        });
+    }
     
     // --- Hero slider ---
     const hero = document.querySelector('.hero');
@@ -106,4 +137,13 @@
         activateMissionPoint(document.querySelector('.mission-point.active') || missionPoints[0]);
     }
 
+
+    function getCurrentPhishing() {
+        // Fetch the current phishing data from the server
+
+        return {
+            "status": "success",
+            "data": []
+        }
+    }
 })(window)

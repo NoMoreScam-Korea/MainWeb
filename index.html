@@ -16,15 +16,22 @@
             <span class="full-text">NoMoreScam Korea</span>
             <span class="short-text">NMS-K</span>
         </div>
-        <div class="nav-links">
-            <a href="#">프로젝트 소개</a>
-            <a href="/career.html">채용 및 협력</a>
-            <a href="javascript:alert('투명성 보고서는 준비 중입니다.')">투명성 보고서</a>
-            <a href="javascript:alert('자주 묻는 질문은 준비 중입니다.')">자주 묻는 질문</a>
-        </div>
-        <div class="nav-actions">
-            <a href="mailto:help@nomorescam.kr" class="btn btn-outline">문의하기</a>
-            <a href="mailto:report@nomorescam.kr" class="btn btn-primary">신고하기</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-menu" id="primary-navigation">
+            <div class="nav-links">
+                <a href="#">프로젝트 소개</a>
+                <a href="/career.html">채용 및 협력</a>
+                <a href="javascript:alert('투명성 보고서는 준비 중입니다.')">투명성 보고서</a>
+                <a href="javascript:alert('자주 묻는 질문은 준비 중입니다.')">자주 묻는 질문</a>
+            </div>
+            <div class="nav-actions">
+                <a href="mailto:help@nomorescam.kr" class="btn btn-outline">문의하기</a>
+                <a href="mailto:report@nomorescam.kr" class="btn btn-primary">신고하기</a>
+            </div>
         </div>
     </nav>
     <section class="hero">
@@ -88,43 +95,74 @@
             <h2 class="section-title"> Transparency Center </h2>
             <div class="kpi-grid">
                 <div class="kpi-card">
-                    <h3>50+</h3>
+                    <h3>70+</h3>
                     <p>Domains Investigated</p>
                 </div>
                 <div class="kpi-card">
-                    <h3>100+</h3>
+                    <h3>150+</h3>
                     <p>Abuse Reports Submitted</p>
                 </div>
                 <div class="kpi-card">
-                    <h3>₩20B+</h3>
+                    <h3>₩25B+</h3>
                     <p>Losses Prevented</p>
                 </div>
                 <div class="kpi-card">
-                    <h3>25+</h3>
+                    <h3>35+</h3>
                     <p>Campaign Takedowns</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="categories">
+    <section class="social-sites">
         <div class="container">
-            <h2 class="section-title"> Scam Categories </h2>
-            <div class="category-grid">
-                <div class="category-card">
-                    <h3>Romance Scam</h3>
-                    <p> Dating Fraud <br> Fake Streaming Platforms <br> Messenger Recruitment </p>
+            <div class="board-header">
+                <div>
+                    <span class="section-kicker">SUSPECTED SOCIAL ENGINEERING</span>
+                    <h2 class="section-title social-sites-title">탐지된 고위험 사기성 플랫폼</h2>
+                    <p class="social-sites-intro">예시 데이터입니다. 개발환경에서 디자인을 확인하기 위해 제공하고 있는 섹션으로 실제 데이터가 아닙니다.</p>
                 </div>
-                <div class="category-card">
-                    <h3>Investment Scam</h3>
-                    <p> Crypto Fraud <br> Stock Manipulation <br> Trading Platform Scam </p>
+                <div class="board-meta">
+                    <strong>Entry</strong>
+                    <p>여기에서 연결된 정보들은 검색엔진 봇이 긁어갈 수 있습니다. 공유를 통한 제한적 피해 완화를 목적으로 합니다.</p>
                 </div>
-                <div class="category-card">
-                    <h3>Credential Phishing</h3>
-                    <p> Kakao <br> Naver <br> Financial Services </p>
+            </div>
+
+            <div class="board-table" role="table" aria-label="탐지된 고위험 사기성 플랫폼 목록">
+                <div class="board-row board-head" role="row">
+                    <div role="columnheader" class="col-campaign">악성캠페인 이름</div>
+                    <div role="columnheader" class="col-summary">간략한 설명</div>
+                    <div role="columnheader" class="col-date">최초 탐지일자</div>
+                    <div role="columnheader" class="col-status">상태</div>
                 </div>
-                <div class="category-card">
-                    <h3>Impersonation Fraud</h3>
-                    <p> Government <br> Delivery Service <br> Financial Institution </p>
+
+                <div class="board-row" role="row">
+                    <div class="board-cell col-campaign" role="cell" data-label="악성캠페인 이름">
+                        <span class="campaign-tag">Login Clone</span>
+                        <strong>가짜 금융 로그인 포털</strong>
+                    </div>
+                    <div class="board-cell col-summary" role="cell" data-label="간략한 설명">은행·포털 로그인 페이지를 모방한 피싱 캠페인으로, 자격 증명 탈취 위험이 높은 사례입니다.</div>
+                    <div class="board-cell col-date" role="cell" data-label="최초 탐지일자">2026-07-18</div>
+                    <div class="board-cell col-status" role="cell" data-label="상태"><span class="status-pill status-open">탐지됨</span></div>
+                </div>
+
+                <div class="board-row" role="row">
+                    <div class="board-cell col-campaign" role="cell" data-label="악성캠페인 이름">
+                        <span class="campaign-tag">Profit Lure</span>
+                        <strong>메신저 유도 투자 캠페인</strong>
+                    </div>
+                    <div class="board-cell col-summary" role="cell" data-label="간략한 설명">메신저 대화에서 시작해 투자 페이지로 연결되는 구조로, 초기 접촉 경로와 전환 흐름을 추적 중입니다.</div>
+                    <div class="board-cell col-date" role="cell" data-label="최초 탐지일자">2026-07-16</div>
+                    <div class="board-cell col-status" role="cell" data-label="상태"><span class="status-pill status-review">분석중</span></div>
+                </div>
+
+                <div class="board-row" role="row">
+                    <div class="board-cell col-campaign" role="cell" data-label="악성캠페인 이름">
+                        <span class="campaign-tag">Authority Spoof</span>
+                        <strong>공공기관 사칭 알림 페이지</strong>
+                    </div>
+                    <div class="board-cell col-summary" role="cell" data-label="간략한 설명">택배·정부기관·금융기관을 흉내 낸 공지형 랜딩 페이지로, 긴급성 메시지로 클릭을 유도합니다.</div>
+                    <div class="board-cell col-date" role="cell" data-label="최초 탐지일자">2026-07-14</div>
+                    <div class="board-cell col-status" role="cell" data-label="상태"><span class="status-pill status-close">대응중</span></div>
                 </div>
             </div>
         </div>
